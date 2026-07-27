@@ -15,25 +15,16 @@
   <img src="https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge" alt="Proprietary License" />
 </p>
 
-<p align="center">
-  <b>Football Jerseys</b> •
-  <b>Shopping Cart</b> •
-  <b>Pakistan Checkout</b> •
-  <b>Order History</b> •
-  <b>Filament Admin Panel</b>
-</p>
-
 ---
 
 ## 📸 Project Screenshots
 
-> Project screenshots are stored in `docs/screenshots/` and are displayed below using repository-relative paths.
 
-| Homepage | Jersey Catalogue |
+| Homepage | Products |
 |---|---|
 | ![Sports Avenue Homepage](docs/screenshots/homepage.png) | ![Sports Avenue Jersey Catalogue](docs/screenshots/jerseys.png) |
 
-| Jersey Details | Cart & Checkout |
+| Product Details | Checkout |
 |---|---|
 | ![Sports Avenue Jersey Details](docs/screenshots/jersey_details.png) | ![Sports Avenue Checkout](docs/screenshots/checkout.png) |
 
@@ -50,8 +41,6 @@
 The customer-facing storefront allows users to explore leagues, brands, categories, and jersey collections; view detailed product information; select sizes and quantities; add products to a cart; calculate Pakistan-based delivery charges; place orders; manage their profile; and review order history.
 
 The application also includes a modern **Filament administration panel** where authorized Admin and Staff users can manage customers, employees, leagues, brands, categories, jerseys, storefront settings, notifications, and customer orders.
-
-The project demonstrates practical ecommerce development with **Laravel 12**, **Livewire 3**, **Filament 3**, **Tailwind CSS**, **MySQL/MariaDB**, transactional inventory handling, role-based authorization, notification workflows, automated testing, and CI-ready release verification.
 
 ---
 
@@ -797,140 +786,16 @@ bash scripts/verify-release.sh
 
 ---
 
-## ✅ Recruiter Highlights
-
-This project demonstrates practical Laravel full-stack and backend development skills, including:
-
-- ✅ Laravel 12 MVC architecture
-- ✅ Livewire 3 component-based storefront
-- ✅ Filament 3 administration panel
-- ✅ Professional ecommerce catalogue and product details
-- ✅ League, brand, category, and product management
-- ✅ Shopping cart and validated checkout workflow
-- ✅ Pakistan shipping and courier calculations
-- ✅ Size-based stock and inventory handling
-- ✅ Transaction-safe order creation
-- ✅ Immutable historical order snapshots
-- ✅ Customer order history and order details
-- ✅ Admin and Staff order management
-- ✅ Full-page dashboard notifications
-- ✅ Admin, Staff, and Customer role structure
-- ✅ Laravel policies and middleware authorization
-- ✅ Authentication, email verification, and password reset
-- ✅ Account suspension and blocking workflows
-- ✅ Payment-webhook validation and idempotency
-- ✅ Laravel migrations, factories, and seeders
-- ✅ MySQL database relationships and constraints
-- ✅ Automated feature, unit, Livewire, authorization, and security tests
-- ✅ Laravel Pint code-style verification
-- ✅ Composer and NPM dependency auditing
-- ✅ GitHub Actions and Dependabot configuration
-- ✅ Responsive Tailwind CSS user interface
-- ✅ Vite production asset compilation
-- ✅ Professional GitHub portfolio documentation
-
----
-
-## 🚀 Future Improvements
-
-- 🌐 Enable and complete Google authentication through Laravel Socialite
-- 💳 Connect the existing Midtrans payment layer to the customer checkout interface
-- 📡 Enable realtime order notifications with Pusher and Laravel Echo
-- 📱 Add a dedicated REST API for a future mobile application
-- 📊 Add advanced sales, revenue, stock, and customer analytics
-- 🧾 Add downloadable PDF invoices
-- 📦 Add customer-facing shipment tracking
-- 🔎 Add full-text search and advanced catalogue filters
-- ⭐ Add product ratings and reviews
-- ❤️ Add customer wishlists
-- 🎟️ Add coupon, promotion, and discount management
-- 📩 Add production email notifications and templates
-- 🗃️ Add CSV or Excel product import and export
-- 🖼️ Add cloud object storage for uploaded product media
-- ⚡ Add Redis-backed queues, cache, and sessions for scaled deployment
-- 🐳 Add optional Docker development and deployment configuration
-- ♿ Add automated accessibility and browser testing
-- 📈 Add automated code-coverage reporting
-- 🔄 Evaluate a future Laravel major-version upgrade when appropriate
-
----
-
-## 🔒 Repository Notes
-
-Before committing or pushing the project, confirm that local and generated files are excluded by `.gitignore`:
-
-```text
-.env
-/vendor
-/node_modules
-/public/build
-/public/hot
-/public/storage
-/storage/debugbar
-/storage/logs
-/storage/framework/cache
-/storage/framework/sessions
-/storage/framework/views
-.phpunit.result.cache
-```
-
-Use `.env.example` for public configuration examples. Keep all real passwords, API credentials, OAuth secrets, payment keys, and application keys only in the local `.env` file.
-
-Recommended production settings:
-
-```env
-APP_ENV=production
-APP_DEBUG=false
-SESSION_SECURE_COOKIE=true
-ALLOW_DEMO_SEEDING=false
-```
-
----
-
-## 📌 Repository Information
-
-Recommended repository name:
-
-```text
-Sports-Avenue
-```
-
-Suggested repository URL:
-
-```text
-https://github.com/CodeByMan/Sports-Avenue
-```
-
-Suggested repository description:
-
-```text
-Sports Avenue is a Laravel 12 ecommerce platform with a Livewire storefront, Filament admin panel, role-based access, inventory-safe checkout, order management, notifications, and comprehensive automated tests.
-```
-
-Suggested GitHub topics:
-
-```text
-laravel php mysql ecommerce livewire filament tailwindcss football-jersey sports-kit shopping-cart checkout inventory-management order-management admin-dashboard phpunit portfolio-project
-```
-
----
-
 ## 👨‍💻 Author
 
 **Muhammad Ali Nawaz**  
 PHP / Laravel Developer
 
-- GitHub: [CodeByMan](https://github.com/CodeByMan)
-
-Sports Avenue was designed and developed by **Muhammad Ali Nawaz** as a professional portfolio project demonstrating Laravel ecommerce development, Livewire storefronts, Filament administration, database architecture, inventory-safe checkout, role-based access, automated testing, and release preparation.
-
 ---
 
 ## 📄 License
 
-Copyright © 2026 **Muhammad Ali Nawaz**. All rights reserved.
-
-This project is distributed under the custom [Sports Avenue Proprietary Portfolio License](LICENSE). Public access to the repository permits viewing for portfolio evaluation, recruitment, demonstration, and educational review only. Copying, redistribution, modification, deployment, resale, or use in another project requires prior written permission from the author.
+This project is open-sourced software licensed under the [MIT License](LICENSE).
 
 ---
 
