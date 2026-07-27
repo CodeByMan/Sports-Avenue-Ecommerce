@@ -73,7 +73,7 @@ jobs:
 
       - name: Upload backend test evidence
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: backend-test-results-php-${{ matrix.php }}
           path: storage/test-results
@@ -114,7 +114,7 @@ jobs:
         run: npm run build
 
       - name: Upload production assets
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: frontend-production-build
           path: public/build
