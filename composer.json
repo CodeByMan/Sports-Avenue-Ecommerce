@@ -24,7 +24,7 @@
         "livewire/livewire": "^3.5"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.13",
+        "barryvdh/laravel-debugbar": "^4.4",
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",
