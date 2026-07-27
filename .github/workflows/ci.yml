@@ -1,0 +1,121 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['8.2', '8.3', '8.4']
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: gd, mbstring, pdo_sqlite, sqlite3
+          coverage: none
+          tools: composer:v2
+
+      - name: Validate Composer files
+        run: composer validate --strict
+
+      - name: Install PHP dependencies
+        run: composer install --no-interaction --prefer-dist --no-progress
+
+      - name: Check PHP platform requirements
+        run: composer check-platform-reqs
+
+      - name: Audit Composer dependencies
+        run: composer audit --locked --abandoned=report
+
+      - name: Inspect Laravel environment
+        run: php artisan about
+
+      - name: Prepare test environment
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+          touch database/database.sqlite
+
+      - name: Clean migration and seed verification
+        env:
+          APP_ENV: testing
+          DB_CONNECTION: sqlite
+          DB_DATABASE: database/database.sqlite
+          ALLOW_DEMO_SEEDING: 'true'
+        run: php artisan migrate:fresh --seed --force
+
+      - name: Check PHP formatting
+        run: vendor/bin/pint --test
+
+      - name: Run test suite
+        env:
+          APP_ENV: testing
+          DB_CONNECTION: sqlite
+          DB_DATABASE: database/database.sqlite
+          MIDTRANS_SERVER_KEY: ci-test-server-key
+        run: |
+          mkdir -p storage/test-results
+          vendor/bin/phpunit --colors=never --do-not-cache-result --log-junit storage/test-results/junit-php-${{ matrix.php }}.xml
+
+      - name: Upload backend test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: backend-test-results-php-${{ matrix.php }}
+          path: storage/test-results
+          if-no-files-found: warn
+
+      - name: Verify routes and caches
+        env:
+          APP_ENV: testing
+          DB_CONNECTION: sqlite
+          DB_DATABASE: database/database.sqlite
+        run: |
+          php artisan route:list
+          php artisan config:cache
+          php artisan event:cache
+          php artisan config:clear
+          php artisan event:clear
+
+  frontend:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install frontend dependencies
+        run: npm ci
+
+      - name: Audit all frontend dependencies
+        run: npm audit --audit-level=moderate
+
+      - name: Build production assets
+        run: npm run build
+
+      - name: Upload production assets
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-production-build
+          path: public/build
+          if-no-files-found: error

@@ -1,0 +1,42 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Mail;
+
+use App\Models\Order;
+use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Attachment;
+use Illuminate\Mail\Mailables\Content;
+use Illuminate\Mail\Mailables\Envelope;
+use Illuminate\Queue\SerializesModels;
+
+class OrderSuccess extends Mailable implements ShouldQueue
+{
+    use Queueable, SerializesModels;
+
+    public int $tries = 5;
+
+    public function __construct(public Order $order) {}
+
+    public function envelope(): Envelope
+    {
+        return new Envelope(subject: trans('Successful order notification'));
+    }
+
+    public function content(): Content
+    {
+        return new Content(
+            markdown: 'emails.orders.order-success',
+            with: ['order' => $this->order],
+        );
+    }
+
+    /** @return array<int, Attachment> */
+    public function attachments(): array
+    {
+        return [];
+    }
+}

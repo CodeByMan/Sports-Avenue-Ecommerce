@@ -1,0 +1,23 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "@tailwindcss/forms": "^0.5.10",
+        "@tailwindcss/typography": "^0.5.19",
+        "autoprefixer": "^10.4.21",
+        "axios": "^1.11.0",
+        "fontaine": "^0.8.0",
+        "laravel-echo": "^2.2.4",
+        "laravel-vite-plugin": "^3.1.3",
+        "postcss": "^8.5.6",
+        "pusher-js": "^8.4.0",
+        "tailwindcss": "^3.4.19",
+        "vite": "^8.1.5"
+    },
+    "name": "sports-avenue",
+    "description": "Sports Avenue Laravel ecommerce storefront and administration interface.",
+    "version": "1.0.0"
+}

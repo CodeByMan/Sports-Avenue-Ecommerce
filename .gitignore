@@ -1,0 +1,178 @@
+# -----------------------------------------------------------------------------
+# Environment files and secrets
+# -----------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+!.env.testing
+/auth.json
+*.key
+*.pem
+
+# -----------------------------------------------------------------------------
+# Composer / PHP dependencies and caches
+# -----------------------------------------------------------------------------
+/vendor/
+/composer.phar
+.phpunit.result.cache
+/.phpunit.cache/
+.php-cs-fixer.cache
+.php_cs.cache
+.phpactor.json
+.phpstorm.meta.php
+
+# -----------------------------------------------------------------------------
+# Node, NPM, Yarn, PNPM
+# -----------------------------------------------------------------------------
+/node_modules/
+.npm/
+.pnpm-store/
+.yarn/cache/
+.yarn/unplugged/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# -----------------------------------------------------------------------------
+# Laravel generated and runtime files
+# -----------------------------------------------------------------------------
+/bootstrap/cache/*
+!/bootstrap/cache/.gitignore
+!/bootstrap/cache/.gitkeep
+
+/storage/*.key
+/storage/debugbar/*
+!/storage/debugbar/.gitignore
+/storage/logs/*
+!/storage/logs/.gitignore
+/storage/framework/cache/*
+!/storage/framework/cache/.gitignore
+/storage/framework/cache/data/*
+!/storage/framework/cache/data/.gitignore
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitignore
+/storage/framework/testing/*
+!/storage/framework/testing/.gitignore
+/storage/framework/views/*
+!/storage/framework/views/.gitignore
+/storage/app/*
+!/storage/app/.gitignore
+!/storage/app/public/
+!/storage/app/public/.gitignore
+/storage/test-results/
+/public/storage
+
+# -----------------------------------------------------------------------------
+# Local databases
+# -----------------------------------------------------------------------------
+/database/*.sqlite
+/database/*.sqlite-*
+/database/release-verification.sqlite
+*.sqlite-journal
+
+# -----------------------------------------------------------------------------
+# Vite and compiled frontend assets
+# -----------------------------------------------------------------------------
+/public/build/
+/public/hot
+/.vite/
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Filament assets are regenerated with: php artisan filament:upgrade
+/public/css/filament/
+/public/js/filament/
+
+# -----------------------------------------------------------------------------
+# Tests, coverage, and reports
+# -----------------------------------------------------------------------------
+/coverage/
+/.coverage/
+/reports/
+/test-results/
+/playwright-report/
+/phpunit-report/
+clover.xml
+junit.xml
+
+# -----------------------------------------------------------------------------
+# Temporary, archive, patch, and backup files
+# -----------------------------------------------------------------------------
+*.bak
+*.backup
+*.old
+*.orig
+*.rej
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+*.patch
+*.diff
+*.zip
+
+# Keep intentionally distributed ZIP files by adding an exception above this line.
+
+# -----------------------------------------------------------------------------
+# JetBrains / PhpStorm / IntelliJ / Fleet
+# -----------------------------------------------------------------------------
+/.idea/
+/.fleet/
+*.iml
+*.ipr
+*.iws
+
+# -----------------------------------------------------------------------------
+# VS Code and local AI editor configuration
+# -----------------------------------------------------------------------------
+/.vscode/
+/.cursor/
+/.codex/
+/.claude/
+
+# -----------------------------------------------------------------------------
+# Windows
+# -----------------------------------------------------------------------------
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# -----------------------------------------------------------------------------
+# macOS
+# -----------------------------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# -----------------------------------------------------------------------------
+# Linux
+# -----------------------------------------------------------------------------
+.directory
+.Trash-*
+.fuse_hidden*
+.nfs*
+
+# -----------------------------------------------------------------------------
+# Local development and personal workspace files
+# -----------------------------------------------------------------------------
+Homestead.json
+Homestead.yaml
+docker-compose.override.yml
+Tasks.md
+ERD.wsd
