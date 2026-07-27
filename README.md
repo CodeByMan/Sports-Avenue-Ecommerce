@@ -44,16 +44,6 @@ The application also includes a modern **Filament administration panel** where a
 
 ---
 
-## 🎯 Project Purpose
-
-A professional ecommerce platform requires more than a simple product listing. It needs catalogue management, inventory control, authentication, authorization, cart logic, checkout validation, shipping calculations, historical order snapshots, account management, administration tools, and reliable automated testing.
-
-**Sports Avenue** combines these requirements into one organized Laravel application designed around a modern customer storefront and a structured administration workflow.
-
-This project was created as a professional portfolio application to demonstrate practical Laravel full-stack development, backend architecture, database design, Livewire components, Filament resources, secure order processing, and maintainable application structure.
-
----
-
 ## 🎯 Key Highlights
 
 - 🏆 Football jersey and sports kit ecommerce platform
