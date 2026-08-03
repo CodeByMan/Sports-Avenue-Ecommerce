@@ -15,7 +15,7 @@
         "postcss": "^8.5.6",
         "pusher-js": "^8.4.0",
         "tailwindcss": "^3.4.19",
-        "vite": "^8.1.5"
+        "vite": "^8.2.0"
     },
     "name": "sports-avenue",
     "description": "Sports Avenue Laravel ecommerce storefront and administration interface.",
